@@ -1,0 +1,66 @@
+/* Default link styles */
+ul li a {
+    position: relative;
+    color: black; /* Default color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  /* Underline effect on hover */
+  ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background-color: var(--cbOrange); /* Orange underline on hover */
+    transition: width 0.3s ease;
+  }
+  
+  /* Hover state: text turns orange, underline grows */
+  ul li a:hover {
+    color: var(--cbOrange) !important; /* Text color on hover */
+  }
+  
+  ul li a:hover::after {
+    width: 100%; /* Expands the underline */
+  }
+  
+  /* Active section link: text and underline turn yellow */
+  ul li a.active {
+    color: var(--cbYellow); /* Text color when section is active */
+  }
+  
+  ul li a.active::after {
+    background-color: var(--cbYellow); /* Underline color when active */
+    width: 100%; /* Keep underline expanded for active link */
+  }
+  
+  /* Side menu styles */
+.fixed.inset-0 {
+    transform: translateX(100%); /* Start off-screen to the right */
+    transition: transform 0.3s ease;
+}
+
+.fixed.inset-0.translate-x-0 {
+    transform: translateX(0); /* Slide in */
+}
+
+.fixed.inset-0.translate-x-full {
+    transform: translateX(100%); /* Slide out */
+}
+
+.fixed.inset-0 a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.fixed.inset-0 a:hover {
+    color: var(--cbOrange); /* Hover color */
+}
+
+.side-menu-top{
+    /* padding-top: 0!impo; */
+}
+
